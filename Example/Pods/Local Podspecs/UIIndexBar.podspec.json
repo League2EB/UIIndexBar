@@ -1,0 +1,24 @@
+{
+  "name": "UIIndexBar",
+  "version": "1.0.0",
+  "summary": "A short description of UIIndexBar.",
+  "description": "TODO: Add long description of the pod here.",
+  "homepage": "https://github.com/League2EB/UIIndexBar",
+  "license": {
+    "type": "MIT",
+    "file": "LICENSE"
+  },
+  "authors": {
+    "League2EB": "poloa51404@gmail.com"
+  },
+  "source": {
+    "git": "https://github.com/League2EB/UIIndexBar.git",
+    "tag": "1.0.0"
+  },
+  "platforms": {
+    "ios": "10.0"
+  },
+  "swift_versions": "5.0",
+  "source_files": "UIIndexBar/Classes/**/*",
+  "swift_version": "5.0"
+}

@@ -1,0 +1,6 @@
+framework module UIIndexBar {
+  umbrella header "UIIndexBar-umbrella.h"
+
+  export *
+  module * { export * }
+}

@@ -1,0 +1,6 @@
+framework module Pods_UIIndexBar_Example {
+  umbrella header "Pods-UIIndexBar_Example-umbrella.h"
+
+  export *
+  module * { export * }
+}

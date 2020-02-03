@@ -1,0 +1,16 @@
+PODS:
+  - UIIndexBar (1.0.0)
+
+DEPENDENCIES:
+  - UIIndexBar (from `../`)
+
+EXTERNAL SOURCES:
+  UIIndexBar:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  UIIndexBar: 666b2c8241b3ef676a43697362b7eb91b8f74c2f
+
+PODFILE CHECKSUM: 36c95d7406f590d3e2b7614722ed8f0e91143f94
+
+COCOAPODS: 1.8.4

@@ -5,6 +5,10 @@
 [![License](https://img.shields.io/cocoapods/l/UIIndexBar.svg?style=flat)](https://cocoapods.org/pods/UIIndexBar)
 [![Platform](https://img.shields.io/cocoapods/p/UIIndexBar.svg?style=flat)](https://cocoapods.org/pods/UIIndexBar)
 
+## Previe
+
+![](https://media.giphy.com/media/hSvPUCvR2NbtXU2VBc/giphy.gif)
+
 ## Example
 
 To run the example project, clone the repo, and run `pod install` from the Example directory first.

@@ -31,7 +31,7 @@ public class UIIndexBar: UIView {
     private var preLabel: UILabel?
     private var preIndex = 0
     private var labelArr: [UILabel] = []
-    private var indexDetailView: CustomView?
+    private var indexDetailView: BubbleView?
 
     public override init(frame: CGRect) {
         super.init(frame: frame)
@@ -46,7 +46,7 @@ public class UIIndexBar: UIView {
     public func setIndexes(indexes: [String]) {
         self.labelArr.removeAll()
         self.preIndex = -1
-        self.addCustomView()
+        self.addBubbleView()
         self.recalculateHeight(indexes: indexes)
         self.addLabels(indexes: indexes)
 
@@ -64,8 +64,8 @@ public class UIIndexBar: UIView {
         self.preLabel = label
     }
 
-    private func addCustomView() {
-        self.indexDetailView = CustomView(frame: CGRect(x: -80, y: 0, width: 50, height: 50))
+    private func addBubbleView() {
+        self.indexDetailView = BubbleView(frame: CGRect(x: -80, y: 0, width: 50, height: 50))
         self.indexDetailView?.backgroundColor = .clear
         self.indexDetailView?.drawColor = self.contentBarStyle.detailViewDrawColor
         self.indexDetailView?.textColor = self.contentBarStyle.detailViewTextColor
@@ -147,7 +147,7 @@ public class UIIndexBar: UIView {
     public override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
         super.touchesEnded(touches, with: event)
         self.isTouch = false
-        UIView.animate(withDuration: 0.2) { [weak self] in
+        UIView.animate(withDuration: 0.24) { [weak self] in
             guard let `self` = self else { return }
             self.indexDetailView?.alpha = 0
         }
@@ -171,13 +171,13 @@ public class UIIndexBar: UIView {
     }
 }
 
-public class CustomView: UIView {
+fileprivate class BubbleView: UIView {
 
     var indexLabel: UILabel?
     var drawColor: UIColor = .black
     var textColor: UIColor = .black
 
-    public override init(frame: CGRect) {
+    fileprivate override init(frame: CGRect) {
         super.init(frame: frame)
         self.drawColor = .lightGray
         self.indexLabel = UILabel(frame: CGRect(x: 0, y: 0, width: frame.size.height, height: frame.size.height))
@@ -191,18 +191,18 @@ public class CustomView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
 
-    public override func draw(_ rect: CGRect) {
+    fileprivate override func draw(_ rect: CGRect) {
         self.drawInContext(context: UIGraphicsGetCurrentContext()!)
     }
 
-    public func drawInContext(context: CGContext) {
+    fileprivate func drawInContext(context: CGContext) {
         context.setLineWidth(2.0)
         context.setFillColor(drawColor.cgColor)
         self.getDrawPath(context: context)
         context.fillPath()
     }
 
-    public func getDrawPath(context: CGContext) {
+    fileprivate func getDrawPath(context: CGContext) {
         let width = bounds.size.width
         let height = bounds.size.height
         let xOffset: CGFloat = bounds.size.width * 1 / 4
